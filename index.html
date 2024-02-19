@@ -7,13 +7,21 @@
     <script type="text/jsx">
       const domNode = document.getElementById('app');
 
-      function Header() {
-        return <h1>Develop. Preview. Ship.</h1>;
+      function Header({title}) {
+        console.log(title);
+        return <h1>{title}</h1>;
       }
 
+      const names = ['Components', 'JSX', 'Virtual DOM', 'State', 'Props', 'Router', 'State Management', 'Hooks', 'Error Handling']
+
       function HomePage(){
-        return <div>\
-          <Header/>;
+        return <div>
+          <Header title="React"/>
+          <ul>
+            {names.map((name) => (
+              <li> {name} </li>
+              ))}
+            </ul>
         </div>;
       }
 
